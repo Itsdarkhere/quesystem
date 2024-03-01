@@ -1,6 +1,6 @@
 import { SQSClient } from "@aws-sdk/client-sqs";
 
-let sqsClient: SQSClient | undefined;
+let sqsClient = undefined;
 export default async function getSqsClient() {
     if (sqsClient) {
         return sqsClient;
