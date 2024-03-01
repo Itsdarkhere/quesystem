@@ -3,6 +3,7 @@ import getSqsClient from "../../../utils/getSqsClient";
 import { ReceiveMessageCommand, DeleteMessageCommand } from "@aws-sdk/client-sqs";
 
 export async function GET(req) {
+    console.log("CALL TO POP");
     const sqsClient = await getSqsClient();
 
     const receiveCommand = new ReceiveMessageCommand({

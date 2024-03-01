@@ -33,6 +33,7 @@ export const getQueSize = async () => {
       return;
     }
 
+    console.log(response);
     const data = await response.json();
     return data.queueSize;
 }
