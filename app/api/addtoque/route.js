@@ -17,6 +17,7 @@ export async function POST(req) {
         MessageBody: JSON.stringify({ userId: userId })
     });
 
-    await sqsClient.send(command);
+    const res = await sqsClient.send(command);
+    console.log('Message sent. MessageId:', res);
     return NextResponse.json({ msg: 'Added...' }, { status: 200 })
 }
