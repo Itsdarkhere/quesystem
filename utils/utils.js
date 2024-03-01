@@ -1,15 +1,17 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export const addToQue = async () => {
+    const userId = uuidv4();
     const response = await fetch('/api/addtoque', {
       method: 'POST',
-      body: JSON.stringify({ userId: uuidv4() }),
+      body: JSON.stringify({ userId: userId }),
       headers: {
         'Content-Type': 'application/json'
       }
     }).then((res) => res.json())
 
     console.log(response);
+    return userId;
 }
 
 export const popFromQue = async () => {
@@ -18,6 +20,7 @@ export const popFromQue = async () => {
     }).then((res) => res.json())
 
     console.log(response);
+    return response?.userId;
 }
 
 export const getQueSize = async () => {
