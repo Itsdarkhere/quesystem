@@ -11,8 +11,9 @@ export async function GET(req) {
     });
 
     try {
-        const { Attributes } = await sqsClient.send(attributesCommand);
-        const queueSize = Attributes.ApproximateNumberOfMessages;
+        const response = await sqsClient.send(attributesCommand);
+        const queueSize = response.Attributes.ApproximateNumberOfMessages;
+        console.log("attributes: ", response)
 
         return NextResponse.json({ queueSize }, { status: 200 });
     } catch (error) {
