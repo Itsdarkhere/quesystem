@@ -41,7 +41,7 @@ export const getQueSize = async () => {
       return;
     }
 
-    console.log(response);
     const data = await response.json();
+    console.log(data);
     return data.queueSize;
 }
