@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import getSqsClient from "../../../utils/getSqsClient";
 import { ReceiveMessageCommand, DeleteMessageCommand } from "@aws-sdk/client-sqs";
 
-export async function GET(req) {
+export async function POST(req) {
     console.log("CALL TO POP");
     const sqsClient = await getSqsClient();
 

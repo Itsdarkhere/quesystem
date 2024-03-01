@@ -16,7 +16,8 @@ export const addToQue = async () => {
 
 export const popFromQue = async () => {
     const response = await fetch('/api/popfromque', {
-      method: 'GET',
+      method: 'POST',
+       body: JSON.stringify({ msg: 'ok' }),
        headers: {
         'Content-Type': 'application/json'
       }
@@ -28,7 +29,8 @@ export const popFromQue = async () => {
 
 export const getQueSize = async () => {
     const response = await fetch('/api/getqueposition', {
-      method: 'GET',
+      method: 'POST',
+      body: JSON.stringify({ msg: 'ok' }),
        headers: {
         'Content-Type': 'application/json'
       }

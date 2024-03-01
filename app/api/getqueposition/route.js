@@ -2,7 +2,7 @@ import getSqsClient from "../../../utils/getSqsClient";
 import { GetQueueAttributesCommand } from "@aws-sdk/client-sqs";
 import { NextResponse } from "next/server";
 
-export async function GET(req) {
+export async function POST(req) {
     console.log("CALL TO GET QUEUE SIZE")
     const sqsClient = await getSqsClient();
 
